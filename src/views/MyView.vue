@@ -1,20 +1,19 @@
-<template>
-  <div>
-    <div v-if="isVisible == 1">qwe</div>
-    <div v-if="isVisible == 2">zxc</div>
-    <p>123213</p>
-    <my-select v-model:isVisible="isVisible" :items="items"></my-select>
-  </div>
+<template lang="pug">
+.wrapper
+  my-select
+  my-input
+  my-input
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import MySelect from '@/components/ui/MySelect.vue';
+import MyInput from '@/components/ui/MyInput.vue';
 
 export default defineComponent({
   name: 'MyView',
   components: {
-    MySelect,
+    MySelect, MyInput
   },
   setup() {
     const items = [
@@ -31,5 +30,8 @@ export default defineComponent({
 
 </script>
 
-<style lang="scss" scoped >
+<style lang="scss">
+.wrapper {
+  // @include mega
+}
 </style>
